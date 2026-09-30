@@ -43,14 +43,9 @@ added over time.
 ## What you need
 
 1. A LiteTMS account that may view employees.
-2. A connector module turned on for your company. An administrator does this in LiteTMS under
-   Administration > Marketplace:
-
-| Module | Turns on |
-|--------|----------|
-| Claude | Claude on the web, desktop and mobile, and Claude Code |
-| ChatGPT | ChatGPT and Codex |
-| MCP Server | Every MCP app, including the two above |
+2. The "ChatGPT, Claude & MCP" module turned on for your company. An administrator does this once
+   in LiteTMS under Administration > Marketplace. That one module turns on every AI app: Claude on
+   the web, desktop and mobile, Claude Code, ChatGPT, Codex, Cursor, VS Code and any other MCP app.
 
 After that, each person connects their own account. Nobody shares a password or an API key.
 
@@ -147,7 +142,7 @@ Type your password only on the LiteTMS page. The AI app never needs it.
 | What you see | What to do |
 |--------------|------------|
 | The company address is not accepted | Check the first part of the address in your browser when you are signed in to LiteTMS. |
-| The Allow page says the connection is not available | Ask your administrator to turn on the module for your app under Administration > Marketplace. |
+| The Allow page says the connection is not available | Ask your administrator to turn on the "ChatGPT, Claude & MCP" module under Administration > Marketplace. |
 | The answer says you lack permission | Your role does not include viewing employees. Ask your administrator. |
 | A person cannot be found | They may belong to a branch you do not see, or the name is spelled differently. |
 | The app asks you to sign in again | The connection ended. Sign in again to restore it. |

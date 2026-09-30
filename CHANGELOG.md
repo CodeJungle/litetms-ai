@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Docs: LiteTMS turns on every AI app with one module, "ChatGPT, Claude & MCP", instead of three
+  (Claude, ChatGPT, MCP Server). README, skill and plugin description say so.
+
 ## 1.0.0 (2026-09-30)
 
 First release.

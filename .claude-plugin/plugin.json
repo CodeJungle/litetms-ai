@@ -1,0 +1,24 @@
+{
+  "name": "litetms",
+  "displayName": "LiteTMS",
+  "version": "1.0.0",
+  "description": "Ask about your transport company's drivers and employees in LiteTMS: find a person, see how to reach them, check which documents expire and which vehicle they use. Read-only. You sign in with your own LiteTMS account.",
+  "author": {
+    "name": "CodeJungle Sp. z o.o.",
+    "email": "contact@litetms.eu",
+    "url": "https://litetms.eu"
+  },
+  "homepage": "https://litetms.eu",
+  "repository": "https://github.com/CodeJungle/litetms-ai",
+  "license": "MIT",
+  "keywords": [
+    "litetms",
+    "tms",
+    "transport",
+    "logistics",
+    "fleet",
+    "drivers",
+    "employees",
+    "dispatch"
+  ]
+}

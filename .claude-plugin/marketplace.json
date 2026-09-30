@@ -1,0 +1,15 @@
+{
+  "name": "litetms",
+  "owner": {
+    "name": "CodeJungle Sp. z o.o.",
+    "email": "contact@litetms.eu",
+    "url": "https://litetms.eu"
+  },
+  "description": "LiteTMS for your AI app: ask about your transport company's drivers and employees, signed in with your own LiteTMS account.",
+  "plugins": [
+    {
+      "name": "litetms",
+      "source": "./"
+    }
+  ]
+}

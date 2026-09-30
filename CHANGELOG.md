@@ -1,0 +1,11 @@
+# Changelog
+
+## 1.0.0 (2026-09-30)
+
+First release.
+
+- The LiteTMS MCP server address (`https://mcp.litetms.eu/mcp`) for Claude, Claude Code, ChatGPT,
+  Codex and other MCP apps.
+- The `litetms` skill: how to search drivers and employees, present the results and answer questions
+  about document expiry.
+- Two read-only tools on the server: `search_drivers` and `get_driver`.

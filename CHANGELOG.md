@@ -1,15 +1,22 @@
 # Changelog
 
-## Unreleased
+## 1.0.1 (2026-10-01)
 
-- Docs: when the "ChatGPT, Claude & MCP" module is off, the LiteTMS Allow page now offers the way
-  forward: an administrator turns it on there (**Turn on and continue**), anyone else asks the people
-  who can (**Ask them to turn it on**). The page also warns when the user's role cannot see an area
-  yet. README and skill say so.
-- Docs: read-only is the state today, not the plan. Tools that make changes are added later, step by
-  step; the skill tells the model to follow such a tool's description and confirm with the user first.
-- Docs: LiteTMS turns on every AI app with one module, "ChatGPT, Claude & MCP", instead of three
-  (Claude, ChatGPT, MCP Server). README, skill and plugin description say so.
+Text only: no change to the server address or to what the plugin contains on your computer. Update
+to get the new skill text (`claude plugin update litetms@litetms`).
+
+- One module, "ChatGPT, Claude & MCP", turns on every AI app in LiteTMS instead of three (Claude,
+  ChatGPT, MCP Server). README, skill and descriptions say so.
+- Read-only is the state today, not the plan. Tools that make changes are added later, step by step;
+  the skill tells the model to follow such a tool's description and confirm with the user first.
+- When that module is off, the LiteTMS Allow page offers the way forward: an administrator turns it
+  on there (**Turn on and continue**), anyone else asks the people who can (**Ask them to turn it
+  on**). The page also warns when the user's role cannot see an area yet.
+- The skill's error reference quotes the server's actual sentences (module off, account on hold or
+  inactive, permission, rate limit, LiteTMS unavailable).
+- Both plugin manifests carry the same description ("Read-only for now").
+- New `SECURITY.md`: report a vulnerability privately to security@litetms.eu.
+- README: a sentence to paste into any AI agent so it connects itself.
 
 ## 1.0.0 (2026-09-30)
 

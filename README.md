@@ -43,9 +43,10 @@ added over time.
 ## What you need
 
 1. A LiteTMS account that may view employees.
-2. The "ChatGPT, Claude & MCP" module turned on for your company. An administrator does this once
-   in LiteTMS under Administration > Marketplace. That one module turns on every AI app: Claude on
-   the web, desktop and mobile, Claude Code, ChatGPT, Codex, Cursor, VS Code and any other MCP app.
+2. The "ChatGPT, Claude & MCP" module turned on for your company. An administrator does this once,
+   in LiteTMS under Administration > Marketplace or with one click on the Allow page the first time
+   they connect. That one module turns on every AI app: Claude on the web, desktop and mobile,
+   Claude Code, ChatGPT, Codex, Cursor, VS Code and any other MCP app.
 
 After that, each person connects their own account. Nobody shares a password or an API key.
 
@@ -58,7 +59,8 @@ https://mcp.litetms.eu/mcp
 ```
 
 If LiteTMS is listed in your AI app's directory, add it from there. Otherwise follow the steps for
-your app.
+your app below, or open [mcp.litetms.eu](https://mcp.litetms.eu/) for the same guides with a copy
+button for every command.
 
 ### Claude (web, desktop, mobile)
 
@@ -108,6 +110,17 @@ page, choose the plus button and enter the server address.
 codex mcp add litetms --url https://mcp.litetms.eu/mcp
 codex mcp login litetms
 ```
+
+### An AI agent that sets itself up
+
+Paste this sentence into the agent. It reads the setup instructions, adds the server in the way its
+own app expects and tells you when to sign in:
+
+```text
+Read https://mcp.litetms.eu/agent-setup/SKILL.md and follow it to connect this agent to LiteTMS.
+```
+
+You still sign in yourself, in your browser. The agent never asks for your password.
 
 ### Cursor, VS Code and other MCP apps
 

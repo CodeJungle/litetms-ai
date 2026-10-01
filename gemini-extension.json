@@ -1,0 +1,10 @@
+{
+  "name": "litetms",
+  "version": "1.0.1",
+  "description": "Ask about your transport company's drivers and employees in LiteTMS: find a person, see how to reach them, check which documents expire and which vehicle they use. Read-only for now. You sign in with your own LiteTMS account.",
+  "mcpServers": {
+    "litetms": {
+      "httpUrl": "https://mcp.litetms.eu/mcp"
+    }
+  }
+}

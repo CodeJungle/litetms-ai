@@ -17,6 +17,12 @@ to get the new skill text (`claude plugin update litetms@litetms`).
 - Both plugin manifests carry the same description ("Read-only for now").
 - New `SECURITY.md`: report a vulnerability privately to security@litetms.eu.
 - README: a sentence to paste into any AI agent so it connects itself.
+- README: one-click links that open Claude, Cursor or VS Code with LiteTMS filled in (each asks you to
+  confirm), and a prefilled link for Claude Team and Enterprise Owners.
+- Codex installs the plugin from this repository: `codex plugin marketplace add CodeJungle/litetms-ai`,
+  then `/plugins` or `codex plugin add litetms@litetms`.
+- New `gemini-extension.json`: `gemini extensions install https://github.com/CodeJungle/litetms-ai`
+  adds the server and the skill to Gemini CLI.
 
 ## 1.0.0 (2026-09-30)
 

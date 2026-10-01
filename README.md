@@ -2,8 +2,9 @@
 
 ![LiteTMS](assets/logo.png)
 
-Connect Claude, ChatGPT, Codex or any other MCP app to your company's LiteTMS and ask about your
-drivers in plain language.
+Connect Claude, ChatGPT, Codex, Gemini CLI or any other MCP app to your company's LiteTMS and ask
+about your drivers in plain language. [Connect in one click](#connect) or follow the steps for your
+app.
 
 [LiteTMS](https://litetms.eu) is a transport management system (TMS) for road carriers and freight
 forwarders. This repository holds the LiteTMS plugin: the address of the LiteTMS MCP server and a
@@ -58,20 +59,31 @@ The server address is the same for every company:
 https://mcp.litetms.eu/mcp
 ```
 
-If LiteTMS is listed in your AI app's directory, add it from there. Otherwise follow the steps for
-your app below, or open [mcp.litetms.eu](https://mcp.litetms.eu/) for the same guides with a copy
-button for every command.
+In one click:
+
+[![Add LiteTMS to Claude](https://img.shields.io/badge/Claude-Add_LiteTMS-D97757?style=flat-square&logo=claude&logoColor=white)](https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=LiteTMS&connectorUrl=https%3A%2F%2Fmcp.litetms.eu%2Fmcp)
+[![Add LiteTMS to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=litetms&config=eyJ1cmwiOiJodHRwczovL21jcC5saXRldG1zLmV1L21jcCJ9)
+[![Install LiteTMS in VS Code](https://img.shields.io/badge/VS_Code-Install_LiteTMS-0098FF?style=flat-square)](https://vscode.dev/redirect/mcp/install?name=litetms&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.litetms.eu%2Fmcp%22%7D)
+
+Each link opens the app with LiteTMS filled in and asks you to confirm; nothing is added until you
+do. Then sign in as described under [Signing in](#signing-in).
+
+If LiteTMS is listed in your AI app's directory, you can also add it from there. For every other app
+follow its steps below, or open [mcp.litetms.eu](https://mcp.litetms.eu/) for the same guides with a
+copy button for every command.
 
 ### Claude (web, desktop, mobile)
 
-1. Open Customize > Connectors.
+1. Open Customize > Connectors, or use the [Add LiteTMS to Claude](https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=LiteTMS&connectorUrl=https%3A%2F%2Fmcp.litetms.eu%2Fmcp) link, which opens the
+   same dialog with the name and address filled in.
 2. Choose Add custom connector.
 3. Paste the server address and choose Add.
 4. Choose Connect.
 5. Enter your company's LiteTMS address, sign in and choose Allow.
 
 On Team and Enterprise plans an Owner adds the connector once under Organization settings >
-Connectors. Each member then opens Customize > Connectors and chooses Connect. A connector added on
+Connectors ([prefilled for Owners](https://claude.ai/admin-settings/connectors?modal=add-custom-connector&connectorName=LiteTMS&connectorUrl=https%3A%2F%2Fmcp.litetms.eu%2Fmcp)). Each member then opens Customize > Connectors and chooses
+Connect. A connector added on
 the web or desktop also works in the mobile app.
 
 ### Claude Code
@@ -106,10 +118,31 @@ page, choose the plus button and enter the server address.
 
 ### Codex
 
+Add this repository as a plugin marketplace:
+
+```bash
+codex plugin marketplace add CodeJungle/litetms-ai
+```
+
+Then type `/plugins` in Codex (in the app: the Plugins tab), choose LiteTMS and install it, or
+install it from the terminal with `codex plugin add litetms@litetms`. The plugin adds the server and
+the LiteTMS skill.
+
+Or add only the server and sign in:
+
 ```bash
 codex mcp add litetms --url https://mcp.litetms.eu/mcp
 codex mcp login litetms
 ```
+
+### Gemini CLI
+
+```bash
+gemini extensions install https://github.com/CodeJungle/litetms-ai
+```
+
+Restart Gemini CLI. It asks you to sign in the first time it uses LiteTMS; `/mcp auth litetms`
+starts the sign-in again.
 
 ### An AI agent that sets itself up
 
@@ -169,10 +202,11 @@ The plugin has no program code and runs nothing on your computer.
 | `.mcp.json` | The server address for Claude and Claude Code. |
 | `mcp.json` | The same address in the Agent Plugins format, used by ChatGPT and Codex. |
 | `.claude-plugin/plugin.json`, `plugin.json` | Name, version and description of the plugin. |
-| `.claude-plugin/marketplace.json` | Lets Claude Code install the plugin straight from this repository. |
+| `.claude-plugin/marketplace.json` | Lets Claude Code and Codex install the plugin straight from this repository. |
+| `gemini-extension.json` | The same address as a Gemini CLI extension. |
 | `skills/litetms/` | Instructions for the AI app: how to search, how to present results, what it must not guess. |
 
-The assets folder holds the LiteTMS icon and logo. Every request the plugin causes goes to
+The assets folder holds the LiteTMS icon and logo. `SECURITY.md` says how to report a vulnerability. Every request the plugin causes goes to
 `https://mcp.litetms.eu/mcp` and to no other address.
 
 ## Data and privacy
@@ -200,7 +234,8 @@ Terms of service: [terms](https://litetms.eu/en/terms).
 
 Write to [contact@litetms.eu](mailto:contact@litetms.eu) or use the
 [contact form](https://litetms.eu/en/contact). Tell us which AI app you use and what the error
-message says. Please do not send passwords or personal data of your staff.
+message says. Please do not send passwords or personal data of your staff. Security issues go
+privately to security@litetms.eu ([SECURITY.md](SECURITY.md)).
 
 ## License
 

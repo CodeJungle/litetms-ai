@@ -21,7 +21,8 @@ answer they can act on: a number to call, a date to note, a link to open.
   what comes back, so two colleagues can get different answers to the same question.
 - **"Not found" can mean "not visible".** Never say a person does not exist in the company. Say you
   could not find them in the records this user can see.
-- **Read-only.** No tool changes anything in LiteTMS.
+- **Read-only for now.** No tool changes anything in LiteTMS yet. Tools that make changes are added
+  later, step by step: when the server lists one, follow its description and confirm with the user first.
 
 ## Tools
 

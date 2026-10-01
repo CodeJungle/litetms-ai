@@ -165,7 +165,8 @@ The assets folder holds the LiteTMS icon and logo. Every request the plugin caus
 ## Data and privacy
 
 - **The AI app acts as you.** It reads only what your LiteTMS role and branches allow.
-- **Read-only.** Nothing in LiteTMS can be added, changed or deleted through this connection.
+- **Read-only for now.** Nothing in LiteTMS can be added, changed or deleted through this connection
+  yet. Making changes is added later, step by step, once it is useful and safe.
 - **What you ask for leaves LiteTMS.** The answers are sent to the AI app you connected and are
   handled under that provider's terms. Connect only an app your company accepts for staff data.
 - **The plugin stores nothing.** It keeps no data, no password and no access key. Your AI app holds

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Docs: read-only is the state today, not the plan. Tools that make changes are added later, step by
+  step; the skill tells the model to follow such a tool's description and confirm with the user first.
 - Docs: LiteTMS turns on every AI app with one module, "ChatGPT, Claude & MCP", instead of three
   (Claude, ChatGPT, MCP Server). README, skill and plugin description say so.
 

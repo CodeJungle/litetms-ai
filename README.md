@@ -142,8 +142,8 @@ Type your password only on the LiteTMS page. The AI app never needs it.
 | What you see | What to do |
 |--------------|------------|
 | The company address is not accepted | Check the first part of the address in your browser when you are signed in to LiteTMS. |
-| The Allow page says the connection is not available | Ask your administrator to turn on the "ChatGPT, Claude & MCP" module under Administration > Marketplace. |
-| The answer says you lack permission | Your role does not include viewing employees. Ask your administrator. |
+| The Allow page says the "ChatGPT, Claude & MCP" module is turned off | An administrator chooses **Turn on and continue** on that page, then **Allow**. Anyone else chooses **Ask them to turn it on**: the people who can get a notification in LiteTMS. Once it is on, connect again. It can also be turned on under Administration > Marketplace. |
+| The answer says you lack permission | Your role does not include viewing employees. Ask your administrator. The Allow page says so before you connect. |
 | A person cannot be found | They may belong to a branch you do not see, or the name is spelled differently. |
 | The app asks you to sign in again | The connection ended. Sign in again to restore it. |
 

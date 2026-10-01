@@ -131,8 +131,8 @@ Tool errors arrive as one plain sentence. Pass it on and add the next step:
 | Situation | What to tell the user |
 |-----------|-----------------------|
 | The company address is not accepted | Check the first part of the address shown in the browser when signed in to LiteTMS. |
-| The Allow page is blocked, or a tool says the connection is not turned on | An administrator has to turn on the "ChatGPT, Claude & MCP" module in LiteTMS under Administration > Marketplace. That one module turns on every AI app. |
-| A tool says the user lacks permission | Their role does not include viewing employees. An administrator can change that. |
+| The Allow page says the module is turned off, or a tool says the connection is not turned on | One module, "ChatGPT, Claude & MCP", turns on every AI app. On the Allow page an administrator chooses **Turn on and continue**; anyone else chooses **Ask them to turn it on**, which notifies the people who can, and connects again once it is on. An administrator can also turn it on in LiteTMS under Administration > Marketplace. |
+| A tool says the user lacks permission | Their role does not include viewing employees. An administrator can change that. The Allow page already warns about it before the user connects. |
 | `Driver not found.` | The person is not in the records this user can see. Search again, or check another branch in LiteTMS. |
 | The app asks to sign in again | The connection ended or was disconnected. Signing in again restores it. |
 | A tool asks to wait | Too many requests in a short time. Wait the stated number of seconds. |

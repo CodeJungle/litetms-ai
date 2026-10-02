@@ -5,7 +5,7 @@
     "email": "contact@litetms.eu",
     "url": "https://litetms.eu"
   },
-  "description": "LiteTMS for your AI app: ask about your transport company's drivers and employees, signed in with your own LiteTMS account.",
+  "description": "LiteTMS for your AI app: ask about your transport company's drivers and employees and keep your own reminders, signed in with your own LiteTMS account.",
   "plugins": [
     {
       "name": "litetms",

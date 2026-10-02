@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "litetms",
-  "version": "1.0.1",
-  "description": "Ask about your transport company's drivers and employees in LiteTMS: find a person, see how to reach them, check which documents expire and which vehicle they use. Read-only for now. You sign in with your own LiteTMS account.",
+  "version": "1.1.0",
+  "description": "Ask about your transport company's drivers and employees in LiteTMS and keep your own reminders: find a person, see how to reach them, check which documents expire, and add, move or delete a reminder. You sign in with your own LiteTMS account.",
   "author": {
     "name": "CodeJungle Sp. z o.o.",
     "email": "contact@litetms.eu",
@@ -19,21 +19,23 @@
     "fleet",
     "drivers",
     "employees",
-    "dispatch"
+    "dispatch",
+    "reminders"
   ],
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "LiteTMS",
-        "shortDescription": "Ask about your drivers",
-        "longDescription": "LiteTMS is a transport management system (TMS) that road carriers and freight forwarders use to run their fleet, drivers, contractors and transport orders. This plugin connects ChatGPT and Codex to your company's LiteTMS workspace, so you can ask about your drivers in plain language instead of opening the Employees tab.\n\nWhat you can do today:\n- Find a driver or another employee by name, status or position.\n- See who is active, who no longer works for the company and who is archived.\n- Get a person's phone numbers and e-mail addresses.\n- Check their documents and expiry dates, with a status for each one: valid, expiring, expired or unknown.\n- See the vehicle and trailer a driver currently uses, their languages, ADR qualification and branches.\n- Open the record in LiteTMS through a direct link.\n\nHow access works: you sign in with your own LiteTMS account. The plugin then sees exactly what you are allowed to see in LiteTMS. Your role and your branches apply to every answer, so two colleagues can get different results for the same question.\n\nWho it is for: dispatchers, forwarders, fleet managers and office staff of companies that already use LiteTMS.\n\nLimits: for now the connection is read-only, so it cannot add, change or delete anything. It covers drivers and employees only. Orders, vehicles, GPS positions and other areas are not available yet; more tools, including ones that make changes, are added step by step. It never returns home addresses, dates of birth, bank details, salary, document numbers or attached files.\n\nBefore you start: you need a LiteTMS account, and the \"ChatGPT, Claude & MCP\" module has to be on for your company. An administrator turns it on in LiteTMS under Administration > Marketplace, or with one click on the Allow page the first time they connect. When you connect, enter your company's LiteTMS address (for example acme for acme.litetms.eu), sign in and choose Allow. You can disconnect at any time in LiteTMS under Settings > Connected apps.",
+        "shortDescription": "Ask about drivers, set reminders",
+        "longDescription": "LiteTMS is a transport management system (TMS) that road carriers and freight forwarders use to run their fleet, drivers, contractors and transport orders. This plugin connects ChatGPT and Codex to your company's LiteTMS workspace, so you can ask about your drivers and keep your reminders in plain language.\n\nWhat you can do today:\n- Find a driver or another employee by name, status or position, and see who is active.\n- Get a person's phone numbers and e-mail addresses.\n- Check their documents and expiry dates: valid, expiring, expired or unknown.\n- See the vehicle and trailer a driver uses, their languages, ADR qualification and branches.\n- List your own reminders, and add, move, change or delete one.\n- Open any record in LiteTMS through a direct link.\n\nHow access works: you sign in with your own LiteTMS account. The plugin sees exactly what you may see in LiteTMS; your role and branches apply to every answer.\n\nWho it is for: dispatchers, forwarders, fleet managers and office staff of companies that already use LiteTMS.\n\nLimits: the only thing it can change is your own reminders; everything else is read only. A reminder stays yours unless you ask for the whole company to see it. Orders, vehicles and GPS positions are not available yet. It never returns home addresses, dates of birth, bank details, salary, document numbers or attached files.\n\nBefore you start: you need a LiteTMS account, and the \"ChatGPT, Claude & MCP\" module has to be on for your company. An administrator turns it on under Administration > Marketplace, or with one click on the Allow page the first time they connect. Then enter your company's LiteTMS address (for example acme for acme.litetms.eu), sign in and choose Allow. Disconnect at any time in LiteTMS under Settings > Connected apps.",
         "developerName": "CodeJungle Sp. z o.o.",
         "category": "Business & Operations",
         "capabilities": [
           "Search drivers and employees",
           "Read contact details",
           "Check document expiry dates",
-          "See the assigned vehicle and trailer"
+          "See the assigned vehicle and trailer",
+          "Create, change and delete your reminders"
         ],
         "websiteURL": "https://litetms.eu",
         "supportURL": "https://litetms.eu/en/contact",
@@ -41,8 +43,8 @@
         "termsOfServiceURL": "https://litetms.eu/en/terms",
         "defaultPrompt": [
           "List our active drivers and the vehicle each one uses.",
-          "Find a driver in LiteTMS and show me their phone number and e-mail.",
-          "Check when a driver's documents expire."
+          "Check when a driver's documents expire.",
+          "Remind me next Monday at 9:00 to download the tachograph data."
         ],
         "brandColor": "#22A7F0",
         "composerIcon": "./assets/icon.png",

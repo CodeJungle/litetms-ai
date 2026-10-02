@@ -151,7 +151,7 @@ No other properties are accepted.
 | `The ChatGPT, Claude & MCP module is turned off for this company in LiteTMS. …` | An administrator turned the module off. They can turn it on again in Marketplace; the connection then works again without a new sign-in. |
 | `… account is not active …` or `… on hold until its balance is topped up …` | The company's LiteTMS account is closed or on hold. Nothing can be read until it is active again. |
 | `This LiteTMS user account is no longer active …` | The signed-in person's account was switched off. |
-| `You do not have permission to view this in LiteTMS. An administrator can change your role.` | The user's role does not include viewing employees. |
+| `You do not have permission to do this in LiteTMS. An administrator can change your role.` | The user's role does not include viewing employees. |
 | `Too many requests. Try again in N seconds.` | More than 60 tool calls were made within 60 seconds on this connection. Wait N seconds. |
 | `LiteTMS is temporarily unavailable.` | LiteTMS could not be reached. Try again in a moment. |
 

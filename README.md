@@ -2,9 +2,9 @@
 
 ![LiteTMS](assets/logo.png)
 
-Connect Claude, ChatGPT, Codex, Gemini CLI or any other MCP app to your company's LiteTMS and ask
-about your drivers in plain language. [Connect in one click](#connect) or follow the steps for your
-app.
+Connect Claude, ChatGPT, Codex, Gemini CLI or any other MCP app to your company's LiteTMS, ask about
+your drivers and keep your reminders in plain language. [Connect in one click](#connect) or follow the
+steps for your app.
 
 [LiteTMS](https://litetms.eu) is a transport management system (TMS) for road carriers and freight
 forwarders. This repository holds the LiteTMS plugin: the address of the LiteTMS MCP server and a
@@ -18,12 +18,16 @@ and your branches apply to every answer.
 
 ## What you can ask today
 
-The connection has two tools. Both only read data.
+The connection has six tools. Four read, and the only thing that can change is your own reminders.
 
 | Tool | What it does |
 |------|--------------|
 | Search drivers | Finds drivers and other employees by name, status or position. Shows each person's status, position and the vehicle and trailer they currently use. |
 | Get driver details | Shows one person's phone numbers, e-mail addresses, languages, ADR qualification, branches, employment dates and documents with their expiry dates. |
+| List my reminders | Lists the reminders you created in LiteTMS, upcoming or past, with date, time, priority and who can see them. |
+| Create a reminder | Adds a reminder for you: a day, an optional time and details, a heads-up some days before, a priority. It stays yours unless you ask for the whole company to see it. |
+| Change a reminder | Moves or edits one of your reminders. Only what you ask to change changes. |
+| Delete a reminder | Deletes one of your reminders. |
 
 Questions that work:
 
@@ -32,18 +36,22 @@ Questions that work:
 - "When does Jan Kowalski's driving licence expire?"
 - "Show me the employees who no longer work for us."
 - "Which languages does Piotr Zielinski speak, and does he have ADR?"
+- "Remind me next Monday at 9:00 to download the tachograph data."
+- "Move my insurance reminder to Thursday at 14:00."
 
-Every answer can include a link that opens the person's record in LiteTMS.
+Every answer can include a link that opens the record in LiteTMS. A reminder the app adds shows up
+under Reminders in LiteTMS like one you add yourself.
 
 Documents are read one person at a time. A question such as "whose documents expire this month?"
 works well for a handful of people; for a large fleet the AI app will ask you to narrow it down.
 
 Orders, vehicles, GPS positions and other parts of LiteTMS are not available yet. More tools are
-added over time.
+added step by step.
 
 ## What you need
 
-1. A LiteTMS account that may view employees.
+1. A LiteTMS account that may view employees (for questions about people) and use reminders (for
+   reminders).
 2. The "ChatGPT, Claude & MCP" module turned on for your company. An administrator does this once,
    in LiteTMS under Administration > Marketplace or with one click on the Allow page the first time
    they connect. That one module turns on every AI app: Claude on the web, desktop and mobile,
@@ -179,7 +187,7 @@ The first time you connect, your browser opens `mcp.litetms.eu` and takes you th
 1. **Your company's LiteTMS address.** Type the first part of the address you sign in at, for
    example `acme` for `acme.litetms.eu`.
 2. **Your usual LiteTMS sign-in**, with your two-factor code if you use one.
-3. **Allow or Cancel.** The page names the app and lists what it may read.
+3. **Allow or Cancel.** The page names the app and lists what it may read and change.
 
 Type your password only on the LiteTMS page. The AI app never needs it.
 
@@ -189,7 +197,8 @@ Type your password only on the LiteTMS page. The AI app never needs it.
 |--------------|------------|
 | The company address is not accepted | Check the first part of the address in your browser when you are signed in to LiteTMS. |
 | The Allow page says the "ChatGPT, Claude & MCP" module is turned off | An administrator chooses **Turn on and continue** on that page, then **Allow**. Anyone else chooses **Ask them to turn it on**: the people who can get a notification in LiteTMS. Once it is on, connect again. It can also be turned on under Administration > Marketplace. |
-| The answer says you lack permission | Your role does not include viewing employees. Ask your administrator. The Allow page says so before you connect. |
+| The answer says you lack permission | Your role does not include that area: viewing employees, or the reminder permissions. Ask your administrator. The Allow page says so before you connect. |
+| A reminder cannot be found | The app reaches only reminders you created. Reminders a colleague shared with you stay in LiteTMS. |
 | A person cannot be found | They may belong to a branch you do not see, or the name is spelled differently. |
 | The app asks you to sign in again | The connection ended. Sign in again to restore it. |
 
@@ -204,7 +213,7 @@ The plugin has no program code and runs nothing on your computer.
 | `.claude-plugin/plugin.json`, `plugin.json` | Name, version and description of the plugin. |
 | `.claude-plugin/marketplace.json` | Lets Claude Code and Codex install the plugin straight from this repository. |
 | `gemini-extension.json` | The same address as a Gemini CLI extension. |
-| `skills/litetms/` | Instructions for the AI app: how to search, how to present results, what it must not guess. |
+| `skills/litetms/` | Instructions for the AI app: how to search, how to handle reminders, how to present results, what it must not guess. |
 
 The assets folder holds the LiteTMS icon and logo. `SECURITY.md` says how to report a vulnerability. Every request the plugin causes goes to
 `https://mcp.litetms.eu/mcp` and to no other address.
@@ -212,8 +221,9 @@ The assets folder holds the LiteTMS icon and logo. `SECURITY.md` says how to rep
 ## Data and privacy
 
 - **The AI app acts as you.** It reads only what your LiteTMS role and branches allow.
-- **Read-only for now.** Nothing in LiteTMS can be added, changed or deleted through this connection
-  yet. Making changes is added later, step by step, once it is useful and safe.
+- **It changes only your reminders.** The app can add, change and delete reminders you created,
+  nothing else. A reminder stays yours unless you ask for the whole company to see it; then everyone
+  in the company gets a notification. Drivers, employees and everything else are read only.
 - **What you ask for leaves LiteTMS.** The answers are sent to the AI app you connected and are
   handled under that provider's terms. Connect only an app your company accepts for staff data.
 - **The plugin stores nothing.** It keeps no data, no password and no access key. Your AI app holds
@@ -221,9 +231,9 @@ The assets folder holds the LiteTMS icon and logo. `SECURITY.md` says how to rep
 - **Some data is never sent:** home addresses, dates of birth, bank details, salary, notes, document
   numbers and attached files.
 - **Your company keeps a record.** LiteTMS writes to the company's audit log that an app was
-  connected, which tool was used and whose record was opened, as it does when you open an employee
-  in the browser. LiteTMS receives only the search terms and ids the AI app sends, not your
-  conversation.
+  connected, which tool was used, whose record was opened and which reminder was added, changed or
+  deleted, as it does when you do it in the browser. LiteTMS receives only what the AI app sends to
+  look something up or save a reminder, not your conversation.
 - **Disconnecting.** In LiteTMS, open Settings > Connected apps and choose Disconnect next to the app.
   Administrators can see and end every connection of the company on the module's setup page.
 

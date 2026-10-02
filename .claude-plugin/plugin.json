@@ -1,8 +1,8 @@
 {
   "name": "litetms",
   "displayName": "LiteTMS",
-  "version": "1.0.1",
-  "description": "Ask about your transport company's drivers and employees in LiteTMS: find a person, see how to reach them, check which documents expire and which vehicle they use. Read-only for now. You sign in with your own LiteTMS account.",
+  "version": "1.1.0",
+  "description": "Ask about your transport company's drivers and employees in LiteTMS and keep your own reminders: find a person, see how to reach them, check which documents expire, and add, move or delete a reminder. You sign in with your own LiteTMS account.",
   "author": {
     "name": "CodeJungle Sp. z o.o.",
     "email": "contact@litetms.eu",
@@ -19,6 +19,7 @@
     "fleet",
     "drivers",
     "employees",
-    "dispatch"
+    "dispatch",
+    "reminders"
   ]
 }

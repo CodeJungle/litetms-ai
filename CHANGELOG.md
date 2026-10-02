@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.1.0 (2026-10-02)
+
+Update to get the new skill (`claude plugin update litetms@litetms`; Codex and Gemini CLI update the
+plugin the same way they installed it). The server address is unchanged.
+
+- Four reminder tools on the server: `list_reminders`, `create_reminder`, `update_reminder` and
+  `delete_reminder`. They reach only the reminders the signed-in user created. Everything else stays
+  read-only.
+- The skill has a Reminders section: turn "on Friday" into a date from the user's own `today`, find a
+  reminder before changing it, carry out a clear request and report what was saved, ask first when
+  more than one reminder fits, before deleting and before making a reminder company-wide.
+- New `skills/litetms/references/reminders.md`: inputs, outputs, hints and the server's sentences.
+- The permission sentence is now "You do not have permission to do this in LiteTMS." for every tool.
+- Descriptions, the ChatGPT and Codex listing text, its capabilities and example prompts, and the
+  README say what the connection does now. Anyone who connected before connects again once, so the
+  Allow page can ask for the two reminder areas.
+
 ## 1.0.1 (2026-10-01)
 
 Text only: no change to the server address or to what the plugin contains on your computer. Update

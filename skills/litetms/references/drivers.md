@@ -15,9 +15,11 @@ Both tools belong to the LiteTMS MCP server at `https://mcp.litetms.eu/mcp`.
 
 Title: **Search drivers**
 
-Search the company's drivers and other staff kept in the LiteTMS Employees tab by name. Returns a
-short list with each person's status, position and currently selected vehicle. Use `get_driver` with
-an id from this list for contact details and documents.
+Search the company's drivers and other staff kept in the LiteTMS Employees tab by name, status or
+position. Returns a short list with each person's id, status, position and currently selected
+vehicle; contact details and documents are not part of the list.
+
+Pass an `id` from this list to `get_driver` for contact details and documents.
 
 ### Input
 

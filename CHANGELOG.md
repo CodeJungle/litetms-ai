@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.2 (2026-10-02)
+
+Text only. The server's tool descriptions now say only what each tool does and no longer point at
+another tool, as the Claude directory asks; the skill's driver reference quotes the new
+`search_drivers` description and keeps the "pass an `id` to `get_driver`" step in its own words.
+
 ## 1.1.1 (2026-10-02)
 
 Text only: no change to the server or the tools. Update to get it (`claude plugin update

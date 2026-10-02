@@ -2,9 +2,8 @@
 
 ![LiteTMS](assets/logo.png)
 
-Connect Claude, ChatGPT, Codex, Gemini CLI or any other MCP app to your company's LiteTMS, ask about
-your drivers and keep your reminders in plain language. [Connect in one click](#connect) or follow the
-steps for your app.
+Connect Claude, ChatGPT, Codex, Gemini CLI or any other MCP app to your company's LiteTMS and work
+with it in plain language. [Connect in one click](#connect) or follow the steps for your app.
 
 [LiteTMS](https://litetms.eu) is a transport management system (TMS) for road carriers and freight
 forwarders. This repository holds the LiteTMS plugin: the address of the LiteTMS MCP server and a
@@ -18,16 +17,16 @@ and your branches apply to every answer.
 
 ## What you can ask today
 
-The connection has six tools. Four read, and the only thing that can change is your own reminders.
+Tools marked **Changes data** add, change or delete something in LiteTMS; the others only read.
 
-| Tool | What it does |
-|------|--------------|
-| Search drivers | Finds drivers and other employees by name, status or position. Shows each person's status, position and the vehicle and trailer they currently use. |
-| Get driver details | Shows one person's phone numbers, e-mail addresses, languages, ADR qualification, branches, employment dates and documents with their expiry dates. |
-| List my reminders | Lists the reminders you created in LiteTMS, upcoming or past, with date, time, priority and who can see them. |
-| Create a reminder | Adds a reminder for you: a day, an optional time and details, a heads-up some days before, a priority. It stays yours unless you ask for the whole company to see it. |
-| Change a reminder | Moves or edits one of your reminders. Only what you ask to change changes. |
-| Delete a reminder | Deletes one of your reminders. |
+| Tool | What it does | Changes data |
+|------|--------------|--------------|
+| Search drivers | Finds drivers and other employees by name, status or position. Shows each person's status, position and the vehicle and trailer they currently use. | No |
+| Get driver details | Shows one person's phone numbers, e-mail addresses, languages, ADR qualification, branches, employment dates and documents with their expiry dates. | No |
+| List my reminders | Lists the reminders you created in LiteTMS, upcoming or past, with date, time, priority and who can see them. | No |
+| Create a reminder | Adds a reminder for you: a day, an optional time and details, a heads-up some days before, a priority. It stays yours unless you ask for the whole company to see it. | **Yes** |
+| Change a reminder | Moves or edits one of your reminders. Only what you ask to change changes. | **Yes** |
+| Delete a reminder | Deletes one of your reminders. | **Yes** |
 
 Questions that work:
 
@@ -221,9 +220,10 @@ The assets folder holds the LiteTMS icon and logo. `SECURITY.md` says how to rep
 ## Data and privacy
 
 - **The AI app acts as you.** It reads only what your LiteTMS role and branches allow.
-- **It changes only your reminders.** The app can add, change and delete reminders you created,
-  nothing else. A reminder stays yours unless you ask for the whole company to see it; then everyone
-  in the company gets a notification. Drivers, employees and everything else are read only.
+- **Changes stay within your role.** The app changes data only through the tools marked **Changes
+  data** above, never beyond what your role allows, and everything else it only reads. A reminder
+  stays yours unless you ask for the whole company to see it; then everyone in the company gets a
+  notification.
 - **What you ask for leaves LiteTMS.** The answers are sent to the AI app you connected and are
   handled under that provider's terms. Connect only an app your company accepts for staff data.
 - **The plugin stores nothing.** It keeps no data, no password and no access key. Your AI app holds

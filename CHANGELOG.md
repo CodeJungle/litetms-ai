@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.1.1 (2026-10-02)
+
+Text only: no change to the server or the tools. Update to get it (`claude plugin update
+litetms@litetms`).
+
+- Short descriptions (all three manifests, the marketplace entry, the ChatGPT and Codex short
+  description) say what stays true as tools are added: LiteTMS in plain language, your own account,
+  your role. They no longer list the tools.
+- README: a **Changes data** column marks the three reminder tools that add, change or delete; the
+  others only read (1.1.0 said "four read", which was wrong).
+- README, skill and the ChatGPT and Codex listing state the limit as a rule: changes only through
+  the tools made for that, never beyond your role, every change in the company's audit log.
+
 ## 1.1.0 (2026-10-02)
 
 Update to get the new skill (`claude plugin update litetms@litetms`; Codex and Gemini CLI update the

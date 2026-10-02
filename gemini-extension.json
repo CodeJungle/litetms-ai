@@ -1,7 +1,7 @@
 {
   "name": "litetms",
-  "version": "1.1.0",
-  "description": "Ask about your transport company's drivers and employees in LiteTMS and keep your own reminders: find a person, see how to reach them, check which documents expire, and add, move or delete a reminder. You sign in with your own LiteTMS account.",
+  "version": "1.1.1",
+  "description": "Use your transport company's LiteTMS from your AI app, in plain language. You sign in with your own LiteTMS account, and the app works only with what your role allows.",
   "mcpServers": {
     "litetms": {
       "httpUrl": "https://mcp.litetms.eu/mcp"

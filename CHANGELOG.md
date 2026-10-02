@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.3 (2026-10-02)
+
+Metadata only. `.claude-plugin/plugin.json` names the privacy policy itself (`privacyPolicyUrl`,
+https://litetms.eu/en/privacy-policy) instead of leaving the Claude directory to find it in the
+README.
+
 ## 1.1.2 (2026-10-02)
 
 Text only. The server's tool descriptions now say only what each tool does and no longer point at

@@ -1,6 +1,6 @@
 {
   "name": "litetms",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Use your transport company's LiteTMS from your AI app, in plain language. You sign in with your own LiteTMS account, and the app works only with what your role allows.",
   "mcpServers": {
     "litetms": {

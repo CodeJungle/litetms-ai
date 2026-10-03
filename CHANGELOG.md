@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.4 (2026-10-03)
+
+Listing text only. The OpenAI long description no longer names other AI apps or a module whose
+name does: it says the plugin connects your company's LiteTMS workspace and that AI app access has
+to be turned on for the company. OpenAI's directory rejects a name or description that references
+another AI assistant, model or platform.
+
 ## 1.1.3 (2026-10-02)
 
 Metadata only. `.claude-plugin/plugin.json` names the privacy policy itself (`privacyPolicyUrl`,

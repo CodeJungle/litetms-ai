@@ -3,7 +3,8 @@
 ![LiteTMS](assets/logo.png)
 
 Connect Claude, ChatGPT, Codex, Gemini CLI or any other MCP app to your company's LiteTMS and work
-with it in plain language. [Connect in one click](#connect) or follow the steps for your app.
+with it in plain language. In Claude and ChatGPT, [add LiteTMS from the app's directory](#connect);
+for every other app, connect in one click or follow its steps.
 
 [LiteTMS](https://litetms.eu) is a transport management system (TMS) for road carriers and freight
 forwarders. This repository holds the LiteTMS plugin: the address of the LiteTMS MCP server and a
@@ -60,7 +61,20 @@ After that, each person connects their own account. Nobody shares a password or 
 
 ## Connect
 
-The server address is the same for every company:
+**In Claude or ChatGPT, add LiteTMS from the app's directory.** Both list LiteTMS, so there is no
+address to paste, and the plugin brings the LiteTMS skill with it:
+
+- **Claude:** open [LiteTMS in the Claude directory](https://claude.ai/directory/litetms), or in
+  Claude choose Customize > Plugins and search for LiteTMS. Choose Add, then connect.
+- **ChatGPT:** open [LiteTMS in the ChatGPT plugin directory](https://chatgpt.com/plugins/plugin_asdk_app_6ac0e8660b2c819189d5acbbeddb5398),
+  or in ChatGPT open Plugins and search for LiteTMS. Install it, then connect your account.
+  Whether ChatGPT offers plugins depends on your plan, your workspace settings and your country.
+
+Then sign in as described under [Signing in](#signing-in). On Claude Team and Enterprise plans and in
+ChatGPT Business and Enterprise workspaces, an administrator may have to allow LiteTMS first.
+
+**Every other app, or no LiteTMS in your app's directory:** use the server address. It is the same
+for every company:
 
 ```text
 https://mcp.litetms.eu/mcp
@@ -75,11 +89,13 @@ In one click:
 Each link opens the app with LiteTMS filled in and asks you to confirm; nothing is added until you
 do. Then sign in as described under [Signing in](#signing-in).
 
-If LiteTMS is listed in your AI app's directory, you can also add it from there. For every other app
-follow its steps below, or open [mcp.litetms.eu](https://mcp.litetms.eu/) for the same guides with a
-copy button for every command.
+For every other app follow its steps below, or open [mcp.litetms.eu](https://mcp.litetms.eu/) for
+the same guides with a copy button for every command.
 
 ### Claude (web, desktop, mobile)
+
+The quickest way is the [Claude directory](https://claude.ai/directory/litetms), above. To add
+LiteTMS by the server address instead:
 
 1. Open Customize > Connectors, or use the [Add LiteTMS to Claude](https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=LiteTMS&connectorUrl=https%3A%2F%2Fmcp.litetms.eu%2Fmcp) link, which opens the
    same dialog with the name and address filled in.
@@ -112,7 +128,8 @@ Then start Claude Code, type `/mcp`, choose `litetms` and sign in.
 
 ### ChatGPT
 
-In the ChatGPT desktop app:
+The quickest way is the [ChatGPT plugin directory](https://chatgpt.com/plugins/plugin_asdk_app_6ac0e8660b2c819189d5acbbeddb5398),
+above. Where ChatGPT does not offer the plugin to you, add the server in the ChatGPT desktop app:
 
 1. Open Settings > MCP servers.
 2. Choose Add server.
@@ -194,6 +211,7 @@ Type your password only on the LiteTMS page. The AI app never needs it.
 
 | What you see | What to do |
 |--------------|------------|
+| LiteTMS is not in ChatGPT's plugins | ChatGPT offers plugins by plan, workspace settings and country, and a workspace administrator may have to allow LiteTMS. Add it by the server address instead, as described under [ChatGPT](#chatgpt). |
 | The company address is not accepted | Check the first part of the address in your browser when you are signed in to LiteTMS. |
 | The Allow page says the "ChatGPT, Claude & MCP" module is turned off | An administrator chooses **Turn on and continue** on that page, then **Allow**. Anyone else chooses **Ask them to turn it on**: the people who can get a notification in LiteTMS. Once it is on, connect again. It can also be turned on under Administration > Marketplace. |
 | The answer says you lack permission | Your role does not include that area: viewing employees, or the reminder permissions. Ask your administrator. The Allow page says so before you connect. |

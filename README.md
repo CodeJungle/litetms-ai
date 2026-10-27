@@ -53,8 +53,9 @@ Every answer can include a link that opens the record in LiteTMS. A reminder the
 under Reminders in LiteTMS like one you add yourself, and a task on your To-Do List and in LiteTMS
 Mobile.
 
-Connected before version 1.2.0? Disconnect the app in LiteTMS under Settings > Connected apps and
-connect again to allow the to-do list and the help tools.
+Connected before version 1.2.0? You do not need to connect again. In LiteTMS, open Settings >
+Connected apps: next to your app it says what is new; choose Turn on, then start a new chat. Apps
+connected from now on get new abilities by themselves, always within your role.
 
 Documents are read one person at a time. A question such as "whose documents expire this month?"
 works well for a handful of people; for a large fleet the AI app will ask you to narrow it down.

@@ -68,7 +68,7 @@ Title: **Add a to-do task**
 | `reminder` | string | `none`, `at_due`, `10m`, `1h`, `1d` (these need a due time), `day_morning`, `prev_day_morning` (09:00 on the due day or the day before; need a due day), `custom` (with `reminder_date` and `reminder_time`). It must be in the future. |
 | `reminder_date`, `reminder_time` | string | Only with `reminder: "custom"`. |
 | `remind_push` | boolean | Push to LiteTMS Mobile or a browser with notifications on. Default `true`. |
-| `remind_email`, `remind_sms` | boolean | Default `false`. Each e-mail or SMS counts towards the company's usage; SMS needs a phone number in the user's profile. |
+| `remind_email`, `remind_sms` | boolean | Default `false`. Each e-mail or SMS counts towards the company's usage; SMS needs a phone number in the user's profile. Setting one is limited to ten an hour per user. |
 | `repeat` | string | `none` (default), `daily`, `weekdays`, `weekly`, `monthly`, `yearly`. Needs a `due_date`. |
 | `priority` | string | `none` (default), `low`, `medium`, `high`. |
 | `list_id` | string or null | A list's `id`; `inbox` or `null` is the Inbox (default). |
@@ -117,4 +117,5 @@ on the web and in LiteTMS Mobile, and its reminder is not sent.
 | `Pick a day before you set a time.` | `due_time` without a `due_date`. |
 | `This list no longer exists. Pick another one.` | `list_id` is not one of the user's lists. |
 | `Add your phone number in your profile to get reminders by SMS.` | `remind_sms: true` without a phone number in the user's profile. |
+| `Too many e-mail or SMS reminders were set from AI apps in the last hour. Try again later, or set this reminder in LiteTMS.` | Ten writes an hour, across all of the user's apps, may turn on an e-mail or SMS reminder or move the reminder of a task that has one. Nothing was saved: say so and offer the task's link. |
 | A sentence naming a property | The value of that property is not accepted; the sentence says what is. |

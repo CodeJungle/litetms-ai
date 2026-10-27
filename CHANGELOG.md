@@ -10,6 +10,9 @@ New tools on the server, so the skill and the listings describe them.
 - **LiteTMS help.** `search_help` answers how to do something and where a page, tab or setting is,
   with links; `get_navigation` lists the pages the user can open, the add-on modules with their
   status and the LiteTMS Mobile links. New reference: `skills/litetms/references/help.md`.
+- **Paid reminders are limited.** Turning on an e-mail or SMS reminder, or moving the reminder of a
+  task that has one, works ten times an hour per user across all their apps; the reference quotes
+  the server's sentence.
 - **Video guides.** `show_video_guides` shows the short LiteTMS film about a page or module (a guide
   with chapters, or a one-minute overview) in the user's language when it exists; Claude and ChatGPT
   play it in the chat, other apps get its links. Documented in `references/help.md`.

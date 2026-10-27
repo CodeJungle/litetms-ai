@@ -1,6 +1,6 @@
 ---
 name: litetms
-description: "Use when the user asks about their transport company's drivers or employees in LiteTMS: who they are, how to reach them (phone, e-mail), which documents expire and when, which vehicle or trailer they drive, who is active and who no longer works for the company. Also use when the user wants to see, add, move, change or delete their own LiteTMS reminders, asks what the LiteTMS connection can do, why a person or a reminder cannot be found, or how to sign in to LiteTMS or disconnect it. Covers the search_drivers, get_driver, list_reminders, create_reminder, update_reminder and delete_reminder tools of the LiteTMS MCP server."
+description: "Use when the user asks about their transport company's drivers or employees in LiteTMS: who they are, how to reach them (phone, e-mail), which documents expire and when, which vehicle or trailer they drive, who is active and who no longer works for the company. Also use when the user wants to see, add, move, change or delete their own LiteTMS reminders or the tasks on their LiteTMS to-do list, asks how to do something in LiteTMS or where a page, tab or setting is, asks which modules their company has, asks what the LiteTMS connection can do, why a person, a reminder or a task cannot be found, or how to sign in to LiteTMS or disconnect it. Covers the search_drivers, get_driver, list_reminders, create_reminder, update_reminder, delete_reminder, todo_list_tasks, todo_create_task, todo_update_task, todo_complete_task, todo_delete_task, search_help and get_navigation tools of the LiteTMS MCP server."
 ---
 
 # LiteTMS
@@ -23,7 +23,8 @@ answer they can act on: a number to call, a date to note, a reminder set, a link
   could not find them in the records this user can see.
 - **Changes only through tools that make them.** A tool whose description says it adds, changes or
   deletes something changes LiteTMS as the user, never beyond their role; every other tool only
-  reads. The reminder tools are such tools; for any tool like them, follow the rules under Reminders.
+  reads. The reminder and to-do tools are such tools; for any tool like them, follow the rules under
+  Reminders.
 
 ## Tools
 
@@ -35,13 +36,24 @@ answer they can act on: a number to call, a date to note, a reminder set, a link
 | `create_reminder` | Add a reminder for the user. |
 | `update_reminder` | Change one of the user's reminders by its `id`: only the fields sent change. |
 | `delete_reminder` | Delete one of the user's reminders by its `id`. |
+| `todo_list_tasks` | List the user's private to-do tasks (all open by default, or today, upcoming, completed, a list, words) with their ids, the lists and `today`. |
+| `todo_create_task` | Add a task: due day and time, reminder, repeat, priority, steps, list. |
+| `todo_update_task` | Change one of the user's tasks by its `id`: only the fields sent change. |
+| `todo_complete_task` | Tick a task off by its `id`, or mark it not done again. |
+| `todo_delete_task` | Delete one of the user's tasks by its `id`. |
+| `search_help` | Search the LiteTMS help articles: how to do something, where a page, tab or setting is. |
+| `get_navigation` | List the pages the user can open, every add-on module with its status, and LiteTMS Mobile. |
 
 Drivers are kept in the Employees tab together with other staff, so `search_drivers` also finds
 office employees. The `position` field tells them apart (`driver` for drivers).
 
-Exact inputs, outputs and the fields that are never returned: [references/drivers.md](references/drivers.md)
-and [references/reminders.md](references/reminders.md). Read them when you need a field name, a filter
-value or a limit.
+The to-do tools come with the To-Do List module: the server lists them only while the user's company
+has it. When they are missing and the user asks about tasks, `get_navigation` says whether the module
+is on and gives its link.
+
+Exact inputs, outputs and the fields that are never returned: [references/drivers.md](references/drivers.md),
+[references/reminders.md](references/reminders.md), [references/todo.md](references/todo.md) and
+[references/help.md](references/help.md). Read them when you need a field name, a filter value or a limit.
 
 ## Workflow
 
@@ -91,6 +103,44 @@ when asked about those, say so and offer `get_driver` for a person's document da
 `remind_days_before` makes the reminder show on the dashboard that many days before its date. Use it
 when the user asks to be reminded ahead ("two days before"); otherwise leave it out.
 
+## To-do list
+
+The to-do tools reach the user's own private list: the To-Do List page of LiteTMS and the To-do tab of
+LiteTMS Mobile. Nobody else sees it. It is not the same as Reminders: a reminder is a dated entry the
+user may share with the company, a task is a private thing to do with steps, a repeat and its own
+reminder. When the user says "remind me" without saying which, use Reminders for a date to remember and
+the to-do list for something to get done; ask when it is unclear.
+
+1. **Dates and times** follow the Reminders rules: `due_date` from the user's `today`
+   (`todo_list_tasks` returns it), `due_time` only when given.
+2. **Find before you change.** Call `todo_list_tasks` (with `query`, a `view` or a `list_id`) and take
+   the task's `id`. Never guess an id.
+3. **A clear request: do it.** "Add call the broker to my to-do list for tomorrow at 9" needs no extra
+   question. Then say what was saved and give the `url`.
+4. **Reminders on a task.** Pick the preset that matches the words: "an hour before" is `1h` (needs a
+   due time), "in the morning" is `day_morning`, an exact moment is `custom`. The in-app and push
+   reminders cost nothing; turn on `remind_email` or `remind_sms` only when the user asks for an e-mail
+   or a text, because each one counts towards the company's usage.
+5. **Ticking off.** `todo_complete_task` ticks a task off; a repeating task then gets its next date,
+   returned as `next_task`: mention it. `completed: false` reopens a task.
+6. **Ask first** when more than one task fits and before deleting a task.
+7. **Steps** are replaced as a whole: to tick one step, send every step with its `done`.
+
+## Finding your way in LiteTMS
+
+For "how do I…", "where is the… page, tab, field or setting" or "what does this button do":
+
+1. Call `search_help` with the question in the user's words as `query` and in English as `query_en`.
+2. Answer from the excerpts, in the user's language, and offer the matching `links` (the page or tab
+   name as the link text). Translate an excerpt in another language rather than quoting it.
+3. If it returns nothing, say the topic is not covered by the help rather than guessing a page.
+
+For "what can I open", "which modules do we have" or "where do I get the phone app", call
+`get_navigation`. When a request needs a module the company does not have on, say so in one line and
+give its link: the Marketplace page for a user who can turn modules on, otherwise say an administrator
+of the company turns it on. Never present a module's features as available when it is off, and never
+quote a price: it is on the Marketplace page.
+
 ## Presenting results
 
 - **A list of people:** a short table with name, position, status, vehicle and trailer. Make the name
@@ -129,9 +179,10 @@ not available through the connection; give the record link for those.
   in LiteTMS.
 - **Sharing a reminder with chosen colleagues or roles** is set in LiteTMS, on the reminder's page.
   The tools can keep a reminder personal or make it company-wide.
-- **Drivers and employees only.** Orders, the vehicle list, contractors, invoices, GPS positions and
-  other areas are not available yet. Say that plainly. Do not answer such questions from general
-  knowledge and do not guess.
+- **Drivers, employees, reminders, the to-do list and help only.** Orders, the vehicle list,
+  contractors, invoices, GPS positions and other areas are not available as data yet. Say that
+  plainly; `search_help` can still say where they are in LiteTMS. Do not answer such questions from
+  general knowledge and do not guess.
 - **Some personal fields are never returned:** home address, date and place of birth, bank details,
   salary, notes, document numbers and attached files. When asked, say the connection does not provide
   them.
@@ -168,6 +219,8 @@ Tool errors arrive as one plain sentence. Pass it on and add the next step:
 | The Allow page says the module is turned off, or a tool says the connection is not turned on | One module, "ChatGPT, Claude & MCP", turns on every AI app. On the Allow page an administrator chooses **Turn on and continue**; anyone else chooses **Ask them to turn it on**, which notifies the people who can, and connects again once it is on. An administrator can also turn it on in LiteTMS under Administration > Marketplace. |
 | A tool says the user lacks permission | Their role does not include that area: viewing employees for people, the reminder permissions for reminders. An administrator can change that. The Allow page already warns about it before the user connects. |
 | `Reminder not found.` | The reminder is not one the user created, or it was deleted. List the reminders again to find it. |
+| `Task not found.` | The task is not on the user's list, or it was deleted. List the tasks again to find it. |
+| No to-do tools, or no help tools, although the user asks for them | The To-Do List module is off for the company (`get_navigation` shows it), or the app was connected before these tools existed: disconnect in LiteTMS under Settings > Connected apps and connect again. |
 | `Driver not found.` | The person is not in the records this user can see. Search again, or check another branch in LiteTMS. |
 | The app asks to sign in again | The connection ended or was disconnected. Signing in again restores it. |
 | A tool asks to wait | Too many requests in a short time. Wait the stated number of seconds. |

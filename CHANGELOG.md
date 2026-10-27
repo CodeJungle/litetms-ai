@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.2.0 (2026-10-27)
+
+New tools on the server, so the skill and the listings describe them.
+
+- **To-do list.** `todo_list_tasks`, `todo_create_task`, `todo_update_task`, `todo_complete_task`
+  and `todo_delete_task` work with the user's private to-do list. The server lists them only while
+  the company has the To-Do List module. New reference: `skills/litetms/references/todo.md`.
+- **LiteTMS help.** `search_help` answers how to do something and where a page, tab or setting is,
+  with links; `get_navigation` lists the pages the user can open, the add-on modules with their
+  status and the LiteTMS Mobile links. New reference: `skills/litetms/references/help.md`.
+- The skill tells reminders from to-do tasks, turns on e-mail or SMS task reminders only on request
+  (each counts towards the company's usage), and says a connection made before this version needs to
+  connect again to allow the new tools.
+- Manifests: version 1.2.0, keywords `to-do` and `help`; the OpenAI long description, capabilities
+  and example prompts name the new abilities.
+
 ## 1.1.4 (2026-10-03)
 
 Listing text only. The OpenAI long description no longer names other AI apps or a module whose

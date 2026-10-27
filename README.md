@@ -28,6 +28,13 @@ Tools marked **Changes data** add, change or delete something in LiteTMS; the ot
 | Create a reminder | Adds a reminder for you: a day, an optional time and details, a heads-up some days before, a priority. It stays yours unless you ask for the whole company to see it. | **Yes** |
 | Change a reminder | Moves or edits one of your reminders. Only what you ask to change changes. | **Yes** |
 | Delete a reminder | Deletes one of your reminders. | **Yes** |
+| List my to-do tasks | Lists the tasks on your private to-do list: today, coming up, all or done, with due dates, reminders, steps and lists. Needs the To-Do List module. | No |
+| Add a to-do task | Adds a task the way you say it: a due day and time, a reminder, a repeat, steps, a list. Needs the To-Do List module. | **Yes** |
+| Change a to-do task | Moves a task to another day or list, or changes its reminder, steps, priority or notes. Needs the To-Do List module. | **Yes** |
+| Tick off a to-do task | Marks a task as done, or as not done again. A repeating task gets its next date. Needs the To-Do List module. | **Yes** |
+| Delete a to-do task | Deletes a task from your to-do list. Needs the To-Do List module. | **Yes** |
+| Search LiteTMS help | Answers how to do something in LiteTMS and where a page, tab or setting is, with a link straight to it. | No |
+| Pages and modules I can open | Lists the pages you can open, the add-on modules your company has and how to get the others, and where to get LiteTMS Mobile. | No |
 
 Questions that work:
 
@@ -38,9 +45,16 @@ Questions that work:
 - "Which languages does Piotr Zielinski speak, and does he have ADR?"
 - "Remind me next Monday at 9:00 to download the tachograph data."
 - "Move my insurance reminder to Thursday at 14:00."
+- "What is on my to-do list today?"
+- "Add call the broker to my to-do list for tomorrow at 9, and remind me an hour before."
+- "Where do I change my password in LiteTMS?"
 
 Every answer can include a link that opens the record in LiteTMS. A reminder the app adds shows up
-under Reminders in LiteTMS like one you add yourself.
+under Reminders in LiteTMS like one you add yourself, and a task on your To-Do List and in LiteTMS
+Mobile.
+
+Connected before version 1.2.0? Disconnect the app in LiteTMS under Settings > Connected apps and
+connect again to allow the to-do list and the help tools.
 
 Documents are read one person at a time. A question such as "whose documents expire this month?"
 works well for a handful of people; for a large fleet the AI app will ask you to narrow it down.
@@ -51,7 +65,8 @@ added step by step.
 ## What you need
 
 1. A LiteTMS account that may view employees (for questions about people) and use reminders (for
-   reminders).
+   reminders). The to-do list needs the To-Do List module on for your company; the help needs
+   nothing more.
 2. The "ChatGPT, Claude & MCP" module turned on for your company. An administrator does this once,
    in LiteTMS under Administration > Marketplace or with one click on the Allow page the first time
    they connect. That one module turns on every AI app: Claude on the web, desktop and mobile,
@@ -250,7 +265,8 @@ The assets folder holds the LiteTMS icon and logo. `SECURITY.md` says how to rep
   numbers and attached files.
 - **Your company keeps a record.** LiteTMS writes to the company's audit log that an app was
   connected, which tool was used, whose record was opened and which reminder was added, changed or
-  deleted, as it does when you do it in the browser. LiteTMS receives only what the AI app sends to
+  deleted, as it does when you do it in the browser. Your to-do list stays private: the log says
+  that a to-do tool was used, never what the task says. LiteTMS receives only what the AI app sends to
   look something up or save a reminder, not your conversation.
 - **Disconnecting.** In LiteTMS, open Settings > Connected apps and choose Disconnect next to the app.
   Administrators can see and end every connection of the company on the module's setup page.

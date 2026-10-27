@@ -22,14 +22,15 @@
     "dispatch",
     "reminders",
     "to-do",
-    "help"
+    "help",
+    "video"
   ],
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "LiteTMS",
         "shortDescription": "LiteTMS in plain language",
-        "longDescription": "LiteTMS is a transport management system (TMS) that road carriers and freight forwarders use to run their fleet, drivers, contractors and transport orders. This plugin connects your company's LiteTMS workspace, so you can ask about your drivers, keep your reminders and to-do list, and find your way around LiteTMS in plain language.\n\nWhat you can do today:\n- Find a driver or another employee by name, status or position, and see who is active.\n- Get a person's phone numbers and e-mail addresses.\n- Check their documents and expiry dates: valid, expiring, expired or unknown.\n- See the vehicle and trailer a driver uses, their languages, ADR qualification and branches.\n- List your own reminders, and add, move, change or delete one.\n- Keep your private to-do list when your company has the To-Do List module: see what is due today, add a task with a due time, reminder or repeat, tick it off, change or delete it.\n- Ask how to do something in LiteTMS or where a page, tab or setting is, and get the steps with a link straight to it.\n- See which pages you can open and which add-on modules your company has.\n- Open any record in LiteTMS through a direct link.\n\nHow access works: you sign in with your own LiteTMS account. The plugin sees exactly what you may see in LiteTMS; your role and branches apply to every answer.\n\nWho it is for: dispatchers, forwarders, fleet managers and office staff of companies that already use LiteTMS.\n\nLimits: it changes data only through the tools made for that, never beyond your role, and your company's audit log records each change; everything else is read only. A reminder stays yours unless you ask for the whole company to see it, and your to-do list is only ever yours. Orders, vehicles and GPS positions are not available yet. It never returns home addresses, dates of birth, bank details, salary, document numbers or attached files.\n\nBefore you start: you need a LiteTMS account, and AI app access has to be turned on for your company. An administrator turns it on in LiteTMS under Administration > Marketplace, or with one click on the Allow page the first time they connect. Then enter your company's LiteTMS address (for example acme for acme.litetms.eu), sign in and choose Allow. Disconnect at any time in LiteTMS under Settings > Connected AI Apps.",
+        "longDescription": "LiteTMS is a transport management system (TMS) that road carriers and freight forwarders use to run their fleet, drivers, contractors and transport orders. This plugin connects your company's LiteTMS workspace, so you can ask about your drivers, keep your reminders and to-do list, and find your way around LiteTMS in plain language.\n\nWhat you can do today:\n- Find a driver or another employee by name, status or position, and see who is active.\n- Get a person's phone numbers and e-mail addresses.\n- Check their documents and expiry dates: valid, expiring, expired or unknown.\n- See the vehicle and trailer a driver uses, their languages, ADR qualification and branches.\n- List your own reminders, and add, move, change or delete one.\n- Keep your private to-do list when your company has the To-Do List module: see what is due today, add a task with a due time, reminder or repeat, tick it off, change or delete it.\n- Ask how to do something in LiteTMS or where a page, tab or setting is, and get the steps with a link straight to it.\n- See which pages you can open and which add-on modules your company has.\n- Watch the short video guide or overview of a page or module, right in the chat.\n- Open any record in LiteTMS through a direct link.\n\nHow access works: you sign in with your own LiteTMS account. The plugin sees exactly what you may see in LiteTMS; your role and branches apply to every answer.\n\nWho it is for: dispatchers, forwarders, fleet managers and office staff of companies that already use LiteTMS.\n\nLimits: it changes data only through the tools made for that, never beyond your role, and your company's audit log records each change; everything else is read only. A reminder stays yours unless you ask for the whole company to see it, and your to-do list is only ever yours. Orders, vehicles and GPS positions are not available yet. It never returns home addresses, dates of birth, bank details, salary, document numbers or attached files.\n\nBefore you start: you need a LiteTMS account, and AI app access has to be turned on for your company. An administrator turns it on in LiteTMS under Administration > Marketplace, or with one click on the Allow page the first time they connect. Then enter your company's LiteTMS address (for example acme for acme.litetms.eu), sign in and choose Allow. Disconnect at any time in LiteTMS under Settings > Connected AI Apps.",
         "developerName": "CodeJungle Sp. z o.o.",
         "category": "Business & Operations",
         "capabilities": [
@@ -39,7 +40,8 @@
           "See the assigned vehicle and trailer",
           "Create, change and delete your reminders",
           "Keep your to-do list",
-          "Find pages and settings in LiteTMS"
+          "Find pages and settings in LiteTMS",
+          "Watch LiteTMS video guides in the chat"
         ],
         "websiteURL": "https://litetms.eu",
         "supportURL": "https://litetms.eu/en/contact",

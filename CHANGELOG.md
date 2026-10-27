@@ -10,11 +10,14 @@ New tools on the server, so the skill and the listings describe them.
 - **LiteTMS help.** `search_help` answers how to do something and where a page, tab or setting is,
   with links; `get_navigation` lists the pages the user can open, the add-on modules with their
   status and the LiteTMS Mobile links. New reference: `skills/litetms/references/help.md`.
+- **Video guides.** `show_video_guides` shows the short LiteTMS film about a page or module (a guide
+  with chapters, or a one-minute overview) in the user's language when it exists; Claude and ChatGPT
+  play it in the chat, other apps get its links. Documented in `references/help.md`.
 - The skill tells reminders from to-do tasks, turns on e-mail or SMS task reminders only on request
   (each counts towards the company's usage), and says how a connection made before this version
-  gets the new tools: Turn on next to the app in LiteTMS Settings > Connected apps, no reconnect.
+  gets the new tools: Turn on next to the app in LiteTMS Settings > Connected AI Apps, no reconnect.
   Connections made from now on receive new abilities by themselves.
-- Manifests: version 1.2.0, keywords `to-do` and `help`; the OpenAI long description and
+- Manifests: version 1.2.0, keywords `to-do`, `help` and `video`; the OpenAI long description and
   capabilities name the new abilities, and one of the three starter prompts is now a help question
   (the directory allows three; the to-do list needs a module, so it is not a starter).
 

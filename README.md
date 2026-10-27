@@ -35,6 +35,7 @@ Tools marked **Changes data** add, change or delete something in LiteTMS; the ot
 | Delete a to-do task | Deletes a task from your to-do list. Needs the To-Do List module. | **Yes** |
 | Search LiteTMS help | Answers how to do something in LiteTMS and where a page, tab or setting is, with a link straight to it. | No |
 | Pages and modules I can open | Lists the pages you can open, the add-on modules your company has and how to get the others, and where to get LiteTMS Mobile. | No |
+| Show LiteTMS video guides | Shows the short film about a page or module: a video guide or a one-minute overview, with chapters. Claude and ChatGPT play it in the chat; other apps give its link. | No |
 
 Questions that work:
 
@@ -48,6 +49,7 @@ Questions that work:
 - "What is on my to-do list today?"
 - "Add call the broker to my to-do list for tomorrow at 9, and remind me an hour before."
 - "Where do I change my password in LiteTMS?"
+- "Show me the video about the To-Do List."
 
 Every answer can include a link that opens the record in LiteTMS. A reminder the app adds shows up
 under Reminders in LiteTMS like one you add yourself, and a task on your To-Do List and in LiteTMS
@@ -66,8 +68,8 @@ added step by step.
 ## What you need
 
 1. A LiteTMS account that may view employees (for questions about people) and use reminders (for
-   reminders). The to-do list needs the To-Do List module on for your company; the help needs
-   nothing more.
+   reminders). The to-do list needs the To-Do List module on for your company; the help and the
+   video guides need nothing more.
 2. The "ChatGPT, Claude & MCP" module turned on for your company. An administrator does this once,
    in LiteTMS under Administration > Marketplace or with one click on the Allow page the first time
    they connect. That one module turns on every AI app: Claude on the web, desktop and mobile,

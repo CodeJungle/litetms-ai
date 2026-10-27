@@ -1,13 +1,15 @@
 # Help tools reference
 
-Both tools belong to the LiteTMS MCP server at `https://mcp.litetms.eu/mcp`. They give the AI app
-what the assistant inside LiteTMS knows about the product: the help articles, and the pages and
-modules this user can open. Every signed-in user may call them.
+The three tools belong to the LiteTMS MCP server at `https://mcp.litetms.eu/mcp`. They give the AI
+app what the assistant inside LiteTMS knows about the product: the help articles, the pages and
+modules this user can open, and the films LiteTMS shows on its pages. Every signed-in user may call
+them.
 
 | Tool | OAuth scope | LiteTMS permission | Hints |
 |------|-------------|--------------------|-------|
 | `search_help` | `help:read` | none | `readOnlyHint: true`, `destructiveHint: false`, `idempotentHint: true` |
 | `get_navigation` | `help:read` | none | `readOnlyHint: true`, `destructiveHint: false`, `idempotentHint: true` |
+| `show_video_guides` | `help:read` | none | `readOnlyHint: true`, `destructiveHint: false`, `idempotentHint: true` |
 
 ## search_help
 
@@ -40,3 +42,28 @@ No properties. Result:
 
 Prices, free trials and subscription dates are not part of the answer: they are on the module's
 Marketplace page.
+
+## show_video_guides
+
+Title: **Show LiteTMS video guides**
+
+| Property | Type | Rule |
+|----------|------|------|
+| `topic` | string, optional | `^[a-z0-9-]{1,40}$`: the page or module a film is about, the last part of its address in LiteTMS (`employees`, `todo`, `reminders`; `system-tour` for the tour). Left out, every film the user can watch. |
+
+Result: `topic` (as asked, or `null`) and `videos`, each with `topic`, `kind` (`guide`: walks through
+a page; `overview`: a module in about a minute), `title` (in the user's language), `duration`
+(`2:47`) and `duration_seconds`, `language` and `language_name` (the version returned: the user's
+language when the film was made in it, else the film's own), `video_url` (plays in any browser, no
+sign-in), `poster_url`, `page_url` (the page or module in LiteTMS, `null` when the user cannot open
+it) and `chapters` (`[{title, start, start_seconds}]`, empty for an overview). A guide whose page the
+user may not open is left out.
+
+Apps that render MCP Apps (Claude, ChatGPT) show the result in a player: poster, chapters, captions,
+a link to the page. Other apps get the same data as text.
+
+| Error sentence | What to do |
+|----------------|------------|
+| `There is no LiteTMS video about "x". Topics with a video: …` | Pick one of the topics listed (each with its English title) and call again. |
+| `There is no LiteTMS video this user can watch.` | Say so; answer from the help instead. |
+| `topic must be a topic name such as employees or todo.` | Send the short name, not the page's title. |

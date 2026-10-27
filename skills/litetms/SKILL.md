@@ -1,6 +1,6 @@
 ---
 name: litetms
-description: "Use when the user asks about their transport company's drivers or employees in LiteTMS: who they are, how to reach them (phone, e-mail), which documents expire and when, which vehicle or trailer they drive, who is active and who no longer works for the company. Also use when the user wants to see, add, move, change or delete their own LiteTMS reminders or the tasks on their LiteTMS to-do list, asks how to do something in LiteTMS or where a page, tab or setting is, asks which modules their company has, asks what the LiteTMS connection can do, why a person, a reminder or a task cannot be found, or how to sign in to LiteTMS or disconnect it. Covers the search_drivers, get_driver, list_reminders, create_reminder, update_reminder, delete_reminder, todo_list_tasks, todo_create_task, todo_update_task, todo_complete_task, todo_delete_task, search_help and get_navigation tools of the LiteTMS MCP server."
+description: "Use when the user asks about their transport company's drivers or employees in LiteTMS: who they are, how to reach them (phone, e-mail), which documents expire and when, which vehicle or trailer they drive, who is active and who no longer works for the company. Also use when the user wants to see, add, move, change or delete their own LiteTMS reminders or the tasks on their LiteTMS to-do list, asks how to do something in LiteTMS or where a page, tab or setting is, wants a video or tutorial about a page or module, asks which modules their company has, asks what the LiteTMS connection can do, why a person, a reminder or a task cannot be found, or how to sign in to LiteTMS or disconnect it. Covers the search_drivers, get_driver, list_reminders, create_reminder, update_reminder, delete_reminder, todo_list_tasks, todo_create_task, todo_update_task, todo_complete_task, todo_delete_task, search_help, get_navigation and show_video_guides tools of the LiteTMS MCP server."
 ---
 
 # LiteTMS
@@ -43,6 +43,7 @@ answer they can act on: a number to call, a date to note, a reminder set, a link
 | `todo_delete_task` | Delete one of the user's tasks by its `id`. |
 | `search_help` | Search the LiteTMS help articles: how to do something, where a page, tab or setting is. |
 | `get_navigation` | List the pages the user can open, every add-on module with its status, and LiteTMS Mobile. |
+| `show_video_guides` | Show the short LiteTMS film about a page or module (a video guide or a one-minute overview), or every film. |
 
 Drivers are kept in the Employees tab together with other staff, so `search_drivers` also finds
 office employees. The `position` field tells them apart (`driver` for drivers).
@@ -140,6 +141,17 @@ For "what can I open", "which modules do we have" or "where do I get the phone a
 give its link: the Marketplace page for a user who can turn modules on, otherwise say an administrator
 of the company turns it on. Never present a module's features as available when it is off, and never
 quote a price: it is on the Marketplace page.
+
+Many pages and modules have a short film: a video guide walks through a page, an overview shows a
+module in about a minute. When the user asks what a page or module is, how it works, or for a video or
+a tutorial:
+
+1. Call `show_video_guides` with its `topic`: the last part of its address in LiteTMS (`employees`,
+   `vehicles`, `todo`, `reminders`, `files`; `system-tour` for a tour of LiteTMS). Without a topic it
+   returns every film the user can watch. An unknown topic answers with the topics there are: pick one.
+2. Answer in words as well. Claude and ChatGPT play the film in the chat; in any other app offer its
+   `video_url`, and its `page_url` to open the page itself.
+3. When `language_name` is not the user's language, say the film is spoken in that language.
 
 ## Presenting results
 

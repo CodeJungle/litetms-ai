@@ -47,9 +47,7 @@
         "termsOfServiceURL": "https://litetms.eu/en/terms",
         "defaultPrompt": [
           "List our active drivers and the vehicle each one uses.",
-          "Check when a driver's documents expire.",
           "Remind me next Monday at 9:00 to download the tachograph data.",
-          "What is on my to-do list today?",
           "Where do I change the interface language in LiteTMS?"
         ],
         "brandColor": "#22A7F0",

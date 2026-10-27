@@ -13,8 +13,9 @@ New tools on the server, so the skill and the listings describe them.
 - The skill tells reminders from to-do tasks, turns on e-mail or SMS task reminders only on request
   (each counts towards the company's usage), and says a connection made before this version needs to
   connect again to allow the new tools.
-- Manifests: version 1.2.0, keywords `to-do` and `help`; the OpenAI long description, capabilities
-  and example prompts name the new abilities.
+- Manifests: version 1.2.0, keywords `to-do` and `help`; the OpenAI long description and
+  capabilities name the new abilities, and one of the three starter prompts is now a help question
+  (the directory allows three; the to-do list needs a module, so it is not a starter).
 
 ## 1.1.4 (2026-10-03)
 

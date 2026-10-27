@@ -220,11 +220,11 @@ Tool errors arrive as one plain sentence. Pass it on and add the next step:
 | A tool says the user lacks permission | Their role does not include that area: viewing employees for people, the reminder permissions for reminders. An administrator can change that. The Allow page already warns about it before the user connects. |
 | `Reminder not found.` | The reminder is not one the user created, or it was deleted. List the reminders again to find it. |
 | `Task not found.` | The task is not on the user's list, or it was deleted. List the tasks again to find it. |
-| No to-do tools, or no help tools, although the user asks for them | The To-Do List module is off for the company (`get_navigation` shows it when the help tools are there), or the app was connected before these tools existed: in LiteTMS, Settings > Connected apps, the user chooses Turn on next to the app (one click, no reconnect) and starts a new chat. |
+| No to-do tools, or no help tools, although the user asks for them | The To-Do List module is off for the company (`get_navigation` shows it when the help tools are there), or the app was connected before these tools existed: in LiteTMS, Settings > Connected AI Apps, the user chooses Turn on next to the app (one click, no reconnect) and starts a new chat. |
 | `Driver not found.` | The person is not in the records this user can see. Search again, or check another branch in LiteTMS. |
 | The app asks to sign in again | The connection ended or was disconnected. Signing in again restores it. |
 | A tool asks to wait | Too many requests in a short time. Wait the stated number of seconds. |
 | LiteTMS is temporarily unavailable | Try again in a moment. |
 
-To disconnect, the user opens LiteTMS, goes to Settings > Connected apps and chooses Disconnect next
+To disconnect, the user opens LiteTMS, goes to Settings > Connected AI Apps and chooses Disconnect next
 to the app.

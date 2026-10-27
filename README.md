@@ -54,7 +54,7 @@ under Reminders in LiteTMS like one you add yourself, and a task on your To-Do L
 Mobile.
 
 Connected before version 1.2.0? You do not need to connect again. In LiteTMS, open Settings >
-Connected apps: next to your app it says what is new; choose Turn on, then start a new chat. Apps
+Connected AI Apps: next to your app it says what is new; choose Turn on, then start a new chat. Apps
 connected from now on get new abilities by themselves, always within your role.
 
 Documents are read one person at a time. A question such as "whose documents expire this month?"
@@ -269,7 +269,7 @@ The assets folder holds the LiteTMS icon and logo. `SECURITY.md` says how to rep
   deleted, as it does when you do it in the browser. Your to-do list stays private: the log says
   that a to-do tool was used, never what the task says. LiteTMS receives only what the AI app sends to
   look something up or save a reminder, not your conversation.
-- **Disconnecting.** In LiteTMS, open Settings > Connected apps and choose Disconnect next to the app.
+- **Disconnecting.** In LiteTMS, open Settings > Connected AI Apps and choose Disconnect next to the app.
   Administrators can see and end every connection of the company on the module's setup page.
 
 How LiteTMS handles personal data: [privacy policy](https://litetms.eu/en/privacy-policy).

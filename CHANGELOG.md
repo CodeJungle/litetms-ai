@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.2.1 (2026-10-28)
+
+Metadata only. `.claude-plugin/plugin.json` gives the Claude directory listing its icon
+(`assets/icon.png`) and its links: documentation (https://mcp.litetms.eu/), support
+(https://litetms.eu/en/contact) and terms (https://litetms.eu/en/terms), next to the privacy policy.
+Claude Code ignores these fields when it loads the plugin.
+
 ## 1.2.0 (2026-10-27)
 
 New tools on the server, so the skill and the listings describe them.

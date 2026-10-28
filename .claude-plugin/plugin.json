@@ -1,7 +1,7 @@
 {
   "name": "litetms",
   "displayName": "LiteTMS",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Use your transport company's LiteTMS from your AI app, in plain language. You sign in with your own LiteTMS account, and the app works only with what your role allows.",
   "author": {
     "name": "CodeJungle Sp. z o.o.",
@@ -11,7 +11,11 @@
   "homepage": "https://litetms.eu",
   "repository": "https://github.com/CodeJungle/litetms-ai",
   "license": "MIT",
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://mcp.litetms.eu/",
+  "supportUrl": "https://litetms.eu/en/contact",
   "privacyPolicyUrl": "https://litetms.eu/en/privacy-policy",
+  "termsOfServiceUrl": "https://litetms.eu/en/terms",
   "keywords": [
     "litetms",
     "tms",
